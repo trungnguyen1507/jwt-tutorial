@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose')
 const authRoute = require('./routes/auth.js')
+const userRoute = require('./routes/user.js')
 
 dotenv.config()
 const app = express()
@@ -21,6 +22,7 @@ app.use(express.json())
 
 // ROUTES
 app.use('/v1/auth', authRoute)
+app.use('/v1/user', userRoute)
 
 app.listen(8000, () => {
   console.log('Server is running')
